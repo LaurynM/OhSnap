@@ -1,6 +1,18 @@
 var db = require("../models");
 
 module.exports = function(app) {
+    app.get("/api/sign-in", function(req, res) {
+    // 0. Verify a User's password
+    db.User.findOne({
+        where: {
+          user_name: req.params.user_name,
+          password: req.params.password
+        }
+      }).then(function(dbUser) {
+        res.json(dbUser);
+        return true;
+      });
+    });
   app.get("/api/users", function(req, res) {
     // 1. Add a join to include all of each Users' Pantry Items
     db.User.findAll({include: db.Pantry}).then(function(dbUser) {
