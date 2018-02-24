@@ -1,7 +1,8 @@
 ### Schema
+DROP DATABASE IF EXISTS Oh_Snap_db;
+CREATE DATABASE IF NOT EXISTS Oh_Snap_db;
 
-CREATE DATABASE Oh_Snap_User_db;
-USE Oh_Snap_User_db;
+USE Oh_Snap_db;
 
 CREATE TABLE users
 (
@@ -13,25 +14,24 @@ CREATE TABLE users
 
 INSERT INTO users (user_name, password) VALUES ('User1','1Password');
 
-CREATE DATABASE Oh_Snap_Pantry_db;
-USE Oh_Snap_Pantry_db;
 
 CREATE TABLE pantry
 (
     -- for each item you would enter in a new row.
     id int NOT NULL AUTO_INCREMENT,
     user_id int NOT NULL,
-    item varchar(255)
-)
+    item varchar(255),
+    PRIMARY KEY (id)
 
-CREATE DATABASE Oh_Snap_Recipes_db;
-USE Oh_Snap_Recipes_db;
+);
+
+
 CREATE TABLE recipes
 (
     -- for each item you would enter in a new row.
     id int NOT NULL AUTO_INCREMENT,
     user_id int NOT NULL,
-    recipe varchar(255)
-)
+    recipe varchar(255),
+    PRIMARY KEY (id)
 
-
+);
