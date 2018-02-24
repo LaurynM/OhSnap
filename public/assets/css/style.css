@@ -2,25 +2,10 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: 'Life Savers', cursive; }
+  font-family: 'Fredericka+the+Great', sans-serif; }
 
 body {
-  background-color: #E9E9EE; }
-
-#color {
-    background-color: #514347;
-    height: 2px;
-    margin-bottom: 1px;
-  }
-
-  #color1 {
-    background-color: #514347;
-    height: 2px;
-    margin-top: 1px;
-  }
-
-
-
+  background-image: url("images/background.svg"); }
 
 a {
   text-decoration: none;
@@ -43,11 +28,11 @@ li {
   color: #675C52; }
 
 .nav {
-  background-color: #9A9FAE;
+  background-color: #9fdde0;
   width: 100%; }
 
 .jumbotron {
-  background-color: #35363d;
+  background-color: #505155;
   margin-top: 10px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -55,8 +40,7 @@ li {
   border: 0px solid #000000; }
 
 .snap {
-  font-family: 'Fredericka the Great', cursive;
- 
+  font-family: 'Life Savers', cursive;
   color: #fafafa;
   font-size: 2.5em; }
   @media screen and (min-width: 550px) {
@@ -79,17 +63,17 @@ li {
   border-radius: 18px 18px 18px 18px;
   -moz-border-radius: 18px 18px 18px 18px;
   -webkit-border-radius: 18px 18px 18px 18px;
-  border: 0px solid #079CB8; }
+  border: 0px solid #000000; }
 
 button {
   background-color:  #505155;
-  border: 4px solid #079CB8;
+  border: 4px solid #9fdde0;
   border-radius: 10px;
   color: #fafafa;
   cursor: pointer; }
 
 footer {
-  background-color: #9A9FAE;
+  background-color: #9fdde0;
   padding: 0.7em;
   width: 100%;
   height: 50px;
@@ -210,7 +194,7 @@ footer {
   flex-basis: 70%; }
 
 .spoiled {
-  color: #079CB8;
+  color: #873f05;
   text-shadow: 0px 0px 2px #243f05; }
 
 .remove {
