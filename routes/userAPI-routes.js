@@ -9,8 +9,12 @@ module.exports = function(app) {
           password: req.params.password
         }
       }).then(function(dbUser) {
+          if (dbUser !== undefined) {
+            return true;
+          } else {
+            return false;
+          }
         res.json(dbUser);
-        return true;
       });
     });
   app.get("/api/users", function(req, res) {
