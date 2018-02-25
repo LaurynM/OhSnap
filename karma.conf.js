@@ -12,9 +12,9 @@ module.exports = function(config) {
     frameworks: ["mocha", "browserify"],
 
     // list of files / patterns to load in the browser
-    files: ["public/js/*.js", "test/*.js"],
+    files: ["https://code.jquery.com/jquery-1.11.2.min.js","public/js/*.js", "test/*.js"],
 
-    // list of files to exclude
+    // list of files to exclude 
     exclude: [],
 
     // preprocess matching files before serving them to the browser
