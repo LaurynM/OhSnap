@@ -2,7 +2,7 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: 'Fredericka+the+Great', sans-serif; }
+  font-family: 'Life Savers', cursive; }
 
 body {
   background-image: url("images/background.svg"); }
@@ -40,7 +40,7 @@ li {
   border: 0px solid #000000; }
 
 .snap {
-  font-family: 'Life Savers', cursive;
+  font-family: 'Fredericka the Great', cursive;
   color: #fafafa;
   font-size: 2.5em; }
   @media screen and (min-width: 550px) {
@@ -55,6 +55,7 @@ li {
 
 .display-5 {
   text-align: center; }
+  
 
 .card {
   max-width: 30rem;
@@ -71,6 +72,22 @@ button {
   border-radius: 10px;
   color: #fafafa;
   cursor: pointer; }
+
+.activeBtn {
+  background-color:  #505155;
+  border: 4px solid #9fdde0;
+  border-radius: 10px;
+  color: #fafafa;
+  cursor: pointer; }
+
+  
+.activeBtn:hover {background-color:  #b3b4b6}
+
+.activeBtn:active {
+  background-color: #58b6bb;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  }
 
 footer {
   background-color: #9fdde0;
@@ -194,8 +211,8 @@ footer {
   flex-basis: 70%; }
 
 .spoiled {
-  color: #873f05;
-  text-shadow: 0px 0px 2px #243f05; }
+  color: #3bcde7;
+  text-shadow: 0px 0px 2px #16053f; }
 
 .remove {
   color:#505155;
