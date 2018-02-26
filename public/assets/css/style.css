@@ -2,10 +2,7 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: 'Life Savers', cursive; }
-
-body {
-  background-image: url("images/background.svg"); }
+  font-family: 'Life Savers', sans-serif; }
 
 a {
   text-decoration: none;
@@ -40,7 +37,7 @@ li {
   border: 0px solid #000000; }
 
 .snap {
-  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Fredericka the Great', sans-serif;
   color: #fafafa;
   font-size: 2.5em; }
   @media screen and (min-width: 550px) {
