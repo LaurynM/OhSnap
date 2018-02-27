@@ -7,6 +7,7 @@ html, body {
 
 
 
+
 a {
   text-decoration: none;
   color: #fafafa; }
@@ -41,6 +42,7 @@ li {
   border: 0px solid #000000; }
 
 .snap {
+
   font-family: 'Fredericka the Great', sans-serif;
   color: #fafafa;
   font-size: 2.5em; }
@@ -213,6 +215,7 @@ footer {
 
 .spoiled {
   color: #2c5057;
+
   text-shadow: 0px 0px 2px #16053f; }
 
 .remove {
