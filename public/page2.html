@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Recipes by Restrictions</title>
+    <title>Oh, Snap!</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -15,43 +15,40 @@
     <!-- autocompete -->
     <link rel="stylesheet" href="./public/assets/css/awesomplete.css"/>
     <!--Style CSS-->
-    <link rel="stylesheet" type="text/css" href="./public/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Life+Savers|Magra" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+       <!-- Bootstrap core CSS -->
+       <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+       <!-- Custom styles for this template -->
+       <link href="cover.css" rel="stylesheet">
   </head>
 
 
 
   <body>
-    <div id="wrap">
-    <!--Navigation Bar-->
-    <div>
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" href="./index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="./page2.html">Search</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./about.html">About</a>
-        </li>
-      </ul>
-    </div>
-   
-    <div class="container">   
+     <!--Jumbotron-->
+   <div class="jumbotron jumbotron-fluid">
+ 
+    <h1 class="display-5 snap">Oh, Snap!</h1>
   
-      <!--Jumbotron-->
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-5 snap">Oh, Snap!</h1>
-          <p class="lead"></p>
-        </div>
+  
+
+  <div class="cover-container d-flex h-100 p-12 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="./index.html">Home</a>
+          <a class="nav-link" href="./page2.html">Search</a>
+          <a class="nav-link" href="./about.html">Contact</a>
+        </nav>
       </div>
+    </header>
+ 
       
 
     <section id="restrictionsDiv">
       
-
+    
       <!-- LAURYN'S FIREBASE -->
       <!-- start search box -->
       <div class="container searchBox">
@@ -88,37 +85,30 @@
             </div>
             <!-- JOSH'S API -->
             <div class="recSearch">
-                <h6>Think you&apos;re ready?</h6>
+                <h6>Ready?<strong>▼</strong></h6>
+                
                 <div class="card-body text-secondary">
                   <button class="food-icon-restr" id="peanut-free">Oh, Snap!</button>
                 </div>
               </div>
             </div>
-              <div class="pantry-current">
-                  <!-- dynamically added from firebase -->
-              </div>
-             
-          </div><!--  end pantry search -->
-        </section>
+            
+          </div>
+        
           <!-- cards fill here: -->
-          <div class="cardGroup"></div>
-
-
-     
-      
     <!-- </section> -->
 
-
-    </div>
-  </div>
+</div><!-- END wrap, needed for sticky footsie -->
 
     <footer>
         <div class="container">
           <div class="row">
-              <p>Joshua Wise | Katy Cassidy | Lauryn McFarland | Cynthia London</p>
+              <p><a href="https://github.com/wisejd02">Joshua Wise</a> | <a href="https://github.com/ihatetoast">Katy Cassidy</a> | <a href="https://github.com/LaurynM">Lauryn McFarland</a> | <a href="https://github.com/CynthiaLondon">Cynthia London</a></p
           </div>
         </div>
+      </div>
     </footer>
+  </section>
 
 
 
