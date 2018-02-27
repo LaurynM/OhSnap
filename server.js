@@ -23,7 +23,8 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);
-
+require("./routes/userAPI-routes.js")(app);
+require("./routes/pantryAPI-routes.js")(app);
 app.listen(PORT, function(){
   console.log("Waddap? Oh Snap App on PORT "+PORT);
 })
