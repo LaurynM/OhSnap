@@ -36,16 +36,21 @@ $(document).ready(function(){
       };
       console.log('newUser name: '+ newUser.user_name);
       console.log('newUser password: '+ newUser.password);
-
-      var currentURL = window.location.origin;
-      $.post(currentURL+"/api/users", newUser, function(data){
-        console.log("newUser sent to api"+ data);
-      });//end post
+      submitNewUser(newUser);
+      // var currentURL = window.location.origin;
+      // $.post("/api/users", newUser, function(data){
+      //   console.log("newUser sent to api"+ data);
+      // });//end post
     } else {
       alert("Please be sure to fill out all fields.");
     }
   })
-
+  function submitNewUser(NewUser) {
+    $.post("/api/users/", NewUser, function() {
+      console.log("i posted");
+      window.location.href = "/page2";
+    });
+  }
   
 
 
