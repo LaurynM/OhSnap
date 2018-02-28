@@ -43,7 +43,12 @@ module.exports = function(app) {
 
   // POST route for saving a new pantry items
   app.post("/api/pantry", function(req, res) {
+    console.log("req");
+    console.log(req.body);
+    // console.log("res");
+    // console.log(res);
     db.Pantry.create(req.body).then(function(dbPantry) {
+      console.log(dbPantry);
       res.json(dbPantry);
     });
   });
