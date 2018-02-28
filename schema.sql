@@ -16,12 +16,14 @@ CREATE TABLE users
 INSERT INTO users (user_name, PASSWORD) VALUES ('User1','1Password');
 
 
-CREATE TABLE pantry
+CREATE TABLE pantries
 (
     -- for each item you would enter in a new row.
     id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
     item VARCHAR(255),
+    createdat DATE,
+	updatedat DATE,
     PRIMARY KEY (id)
 
 );
@@ -33,6 +35,8 @@ CREATE TABLE recipes
     id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
     recipe VARCHAR(255),
+    createdat DATE,
+	updatedat DATE,
     PRIMARY KEY (id)
 
 );
