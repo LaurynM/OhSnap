@@ -1,4 +1,7 @@
 //js for index and its modal only. 
+// signUpForm {
+//   display:none;
+// }
 
 
 $(document).ready(function(){
@@ -6,12 +9,23 @@ $(document).ready(function(){
   $("#circleBtn").click(function(){
       $("#signInModal").modal();
   });
-  //get username and password
-  //route to send to: /api/sign-in
-  $("#modalSignIn").on("click", (e)=> {
+  $("#signUpDiv").click(function(){
+    $(".signInForm").css( "display", "none" );
+    $(".signUpForm").css( "display", "block" );
+    // activeBtn
+    $(this).addClass("activeBtn");
+    $("#signInDiv").removeClass("activeBtn");
+  });
+  $("#signInDiv").click(function(){
+    $(".signInForm").css( "display", "block" );
+    $(".signUpForm").css( "display", "none" );
+    $(this).addClass("activeBtn");
+    $("#signUnDiv").removeClass("activeBtn");
+  });
+
+  $("#modalSignUp").on("click", (e)=> {
     e.preventDefault();
-    //validate form first. later make sure email and password fit rules
-    function validateForm(){
+    function validateSignUp(){
       var formValid = true;
       $('.form-control').each(function(){
         if($(this).val() === ''){
@@ -26,9 +40,9 @@ $(document).ready(function(){
       return formValid;
     };//end validateForm
     
-    validateForm();
+    validateSignUp();
 
-    if(validateForm()){
+    if(validateSignUp()){
       alert("form is valid");
       const newUser = {
         id:"",
@@ -38,17 +52,51 @@ $(document).ready(function(){
       console.log('newUser name: '+ newUser.user_name);
       console.log('newUser password: '+ newUser.password);
       submitNewUser(newUser);
-      // var currentURL = window.location.origin;
-      // $.post("/api/users", newUser, function(data){
-      //   console.log("newUser sent to api"+ data);
-      // });//end post
+    } else {
+      alert("Please be sure to fill out all fields.");
+    }
+  }); //end the sign UP onclick evt 
+
+
+  $("#modalSignIn").on("click", (e)=> {
+    e.preventDefault();
+    function validateSignIn(){
+      var formValid = true;
+      $('.form-control').each(function(){
+        if($(this).val() === ''){
+          alert("Fields cannot be empty.");
+          formValid = false;
+        }
+      });
+      return formValid;
+    };//end validateForm
+    
+    validateSignIn();
+
+    if(validateSignIn()){
+      alert("form is valid");
+      const User = {
+        id:"",
+        user_name: $('#username').val().trim(),
+        password: $('#psw').val().trim()
+      };
+      console.log('newUser name: '+ newUser.user_name);
+      console.log('newUser password: '+ newUser.password);
+      submitNewUser(newUser);
     } else {
       alert("Please be sure to fill out all fields.");
     }
   })
+
   function submitNewUser(NewUser) {
     $.post("/api/users/", NewUser, function() {
-      console.log("i posted");
+      console.log("I want to sign in as a NEW user");
+      window.location.href = "/page2.html";
+    });
+  }
+  function submitUser(User) {
+    $.get("/api/users/:id", User, function() {
+      console.log("I want to log in as an existing user");
       window.location.href = "/page2.html";
     });
   }
