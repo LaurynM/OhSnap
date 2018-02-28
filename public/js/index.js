@@ -31,6 +31,7 @@ $(document).ready(function(){
     if(validateForm()){
       alert("form is valid");
       const newUser = {
+        id:"",
         user_name: $('#username').val().trim(),
         password: $('#psw').val().trim()
       };
@@ -48,7 +49,7 @@ $(document).ready(function(){
   function submitNewUser(NewUser) {
     $.post("/api/users/", NewUser, function() {
       console.log("i posted");
-      window.location.href = "/page2";
+      window.location.href = "/page2.html";
     });
   }
   
