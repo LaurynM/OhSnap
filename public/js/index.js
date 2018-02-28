@@ -20,20 +20,20 @@ $(document).ready(function(){
     $(".signInForm").css( "display", "block" );
     $(".signUpForm").css( "display", "none" );
     $(this).addClass("activeBtn");
-    $("#signUnDiv").removeClass("activeBtn");
+    $("#signUpDiv").removeClass("activeBtn");
   });
 
   $("#modalSignUp").on("click", (e)=> {
     e.preventDefault();
     function validateSignUp(){
       var formValid = true;
-      $('.form-control').each(function(){
+      $('.signUpFormControl').each(function(){
         if($(this).val() === ''){
           alert("Fields cannot be empty.");
           formValid = false;
         }
       });
-      if( $('#psw').val().trim() !== $('#psw2').val().trim() ){
+      if( $('#psw1').val().trim() !== $('#psw2').val().trim() ){
         alert("Passwords are not the same.");
         formValid = false;
       }
@@ -47,7 +47,7 @@ $(document).ready(function(){
       const newUser = {
         id:"",
         user_name: $('#username').val().trim(),
-        password: $('#psw').val().trim()
+        password: $('#psw1').val().trim()
       };
       console.log('newUser name: '+ newUser.user_name);
       console.log('newUser password: '+ newUser.password);
@@ -58,35 +58,35 @@ $(document).ready(function(){
   }); //end the sign UP onclick evt 
 
 
-  $("#modalSignIn").on("click", (e)=> {
-    e.preventDefault();
-    function validateSignIn(){
-      var formValid = true;
-      $('.form-control').each(function(){
-        if($(this).val() === ''){
-          alert("Fields cannot be empty.");
-          formValid = false;
-        }
-      });
-      return formValid;
-    };//end validateForm
+  // $("#modalSignIn").on("click", (e)=> {
+  //   e.preventDefault();
+  //   function validateSignIn(){
+  //     var formValid = true;
+  //     $('.form-control').each(function(){
+  //       if($(this).val() === ''){
+  //         alert("Fields cannot be empty.");
+  //         formValid = false;
+  //       }
+  //     });
+  //     return formValid;
+  //   };//end validateForm
     
-    validateSignIn();
+  //   validateSignIn();
 
-    if(validateSignIn()){
-      alert("form is valid");
-      const User = {
-        id:"",
-        user_name: $('#username').val().trim(),
-        password: $('#psw').val().trim()
-      };
-      console.log('newUser name: '+ newUser.user_name);
-      console.log('newUser password: '+ newUser.password);
-      submitNewUser(newUser);
-    } else {
-      alert("Please be sure to fill out all fields.");
-    }
-  })
+  //   if(validateSignIn()){
+  //     alert("form is valid");
+  //     const User = {
+  //       id:"",
+  //       user_name: $('#username').val().trim(),
+  //       password: $('#psw').val().trim()
+  //     };
+  //     console.log('newUser name: '+ newUser.user_name);
+  //     console.log('newUser password: '+ newUser.password);
+  //     submitNewUser(newUser);
+  //   } else {
+  //     alert("Please be sure to fill out all fields.");
+  //   }
+  // });
 
   function submitNewUser(NewUser) {
     $.post("/api/users/", NewUser, function() {
