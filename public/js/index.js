@@ -30,7 +30,7 @@ $(document).ready(function(){
 
     if(validateForm()){
       alert("form is valid");
-      const newUser = {
+      var newUser = {
         user_name: $('#username').val().trim(),
         password: $('#psw').val().trim()
       };

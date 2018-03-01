@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Pantry = sequelize.define("Pantry", {
+  var Pantries = sequelize.define("Pantries", {
     item: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -9,15 +9,15 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Pantry.associate = function(models) {
+  Pantries.associate = function(models) {
     // We're saying that a Pantryt should belong to a User
     // A Pantry can't be created without a User due to the foreign key constraint
-    Pantry.belongsTo(models.User, {
+    Pantries.belongsTo(models.Users, {
       foreignKey: {
         allowNull: false
       }
     });
   };
 
-  return Pantry;
+  return Pantries;
 };
