@@ -1,7 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     // Giving the User model a user_name of type STRING
-    user_name: DataTypes.STRING
+    user_name: DataTypes.STRING,
+    password: DataTypes.STRING
+  },{
+    timestamp:false
   });
 
   // User.associate = function(models) {
@@ -11,6 +14,6 @@ module.exports = function(sequelize, DataTypes) {
   //     onDelete: "cascade"
   //   });
   // };
-
+  User.sync();
   return User;
 };
