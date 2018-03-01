@@ -376,3 +376,38 @@ footer {
     color: #675C52; }
 
 /*# sourceMappingURL=style.css.map */
+
+/* MODAL SPECIFIC */
+
+.modal-content {
+  background-color: #f0f0f0;
+}
+.signInUpDivs{
+  display: flex;
+}
+.signInUpDiv {
+  background-color:  #5051558e;
+  border: 2px solid #848485;
+  border-bottom: 2px solid #9fdde0;
+  border-bottom: 0px;
+  padding: 0.5em;
+  color: #fafafa;
+  cursor: pointer;
+}
+.signInUpDiv h4 {
+  margin:0;
+}
+.signInUpForm {
+  border: 2px solid #9fdde0;
+  padding: 0.5em;
+  background-color: #fff;
+}
+.signUpForm {
+  display:none;
+}
+
+.activeBtn {
+  background-color:  #505155;
+  border: 2px solid #9fdde0;
+  border-bottom: 0px
+  }
