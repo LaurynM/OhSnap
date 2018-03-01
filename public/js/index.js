@@ -1,4 +1,7 @@
 //js for index and its modal only. 
+// signUpForm {
+//   display:none;
+// }
 
 
 $(document).ready(function(){
@@ -6,52 +9,102 @@ $(document).ready(function(){
   $("#circleBtn").click(function(){
       $("#signInModal").modal();
   });
-  //get username and password
-  //route to send to: /api/sign-in
-  $("#modalSignIn").on("click", (e)=> {
+  $("#signUpDiv").click(function(){
+    clearFields();
+    $(".signInForm").css( "display", "none" );
+    $(".signUpForm").css( "display", "block" );
+    // activeBtn
+    $(this).addClass("activeBtn");
+    $("#signInDiv").removeClass("activeBtn");
+  });
+  $("#signInDiv").click(function(){
+    clearFields();
+    $(".signInForm").css( "display", "block" );
+    $(".signUpForm").css( "display", "none" );
+    $(this).addClass("activeBtn");
+    $("#signUpDiv").removeClass("activeBtn");
+  });
+
+  $("#modalSignUp").on("click", (e)=> {
     e.preventDefault();
-    //validate form first. later make sure email and password fit rules
-    function validateForm(){
+    function validateSignUp(){
       var formValid = true;
-      $('.form-control').each(function(){
+      $('.signUpFormControl').each(function(){
         if($(this).val() === ''){
-          alert("Fields cannot be empty.");
           formValid = false;
         }
       });
-      if( $('#psw').val().trim() !== $('#psw2').val().trim() ){
+      if( $('#psw1').val().trim() !== $('#psw2').val().trim() ){
         alert("Passwords are not the same.");
         formValid = false;
       }
       return formValid;
     };//end validateForm
     
-    validateForm();
+    validateSignUp();
 
-    if(validateForm()){
-      alert("form is valid");
+    if(validateSignUp()){
       const newUser = {
-        user_name: $('#username').val().trim(),
-        password: $('#psw').val().trim()
+        id:"",
+        user_name: $('#newUsername').val().trim(),
+        password: $('#psw1').val().trim()
       };
       console.log('newUser name: '+ newUser.user_name);
       console.log('newUser password: '+ newUser.password);
       submitNewUser(newUser);
-      // var currentURL = window.location.origin;
-      // $.post("/api/users", newUser, function(data){
-      //   console.log("newUser sent to api"+ data);
-      // });//end post
-    } else {
-      alert("Please be sure to fill out all fields.");
-    }
-  })
+    } 
+  }); //end the sign UP onclick evt 
+
+
+  $("#modalSignIn").on("click", (e)=> {
+    e.preventDefault();
+
+    function validateSignIn(){
+      var formValid = true;
+      $('.signInFormControl').each(function(){
+        if($(this).val() === ''){
+          formValid = false;
+        }
+      });
+      return formValid;
+    };//end validateForm
+    
+    validateSignIn();
+
+    if(validateSignIn()){
+      alert("Sign in is valid");
+      const User = {
+        id:"",
+        user_name: $('#username').val().trim(),
+        password: $('#psw').val().trim()
+      };
+      console.log('newUser name: '+ User.user_name);
+      console.log('newUser password: '+ User.password);
+      submitUser(User);
+    } 
+  });
+
   function submitNewUser(NewUser) {
     $.post("/api/users/", NewUser, function() {
-      console.log("i posted");
-      window.location.href = "/page2";
+      console.log("I want to sign in as a NEW user");
+      window.location.href = "/page2.html";
     });
+    clearFields();
+  }
+  function submitUser(User) {
+    $.get("/api/sign-in", User, function() {
+      console.log("I want to log in as an existing user");
+      window.location.href = "/page2.html";
+    });
+    clearFields();
   }
   
-
+  function clearFields(){
+    $('#username').val('');
+    $('#newUsername').val('');
+    $('#psw').val('');
+    $('#psw1').val('');
+    $('#psw2').val('');  
+  }
 
 }); //end document ready
