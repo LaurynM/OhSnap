@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
     app.get("/api/sign-in", function(req, res) {
     // 0. Verify a User's password
-    db.User.findOne({
+    db.Users.findOne({
         where: {
           user_name: req.params.user_name,
           password: req.params.password
@@ -19,31 +19,33 @@ module.exports = function(app) {
     });
   app.get("/api/users", function(req, res) {
     // 1. Add a join to include all of each Users' Pantry Items
-    db.User.findAll({include: db.Pantry}).then(function(dbUser) {
+    db.Users.findAll({include: [db.Pantries]}).then(function(dbUser) {
       res.json(dbUser);
     });
   });
 
   app.get("/api/users/:id", function(req, res) {
     // 2. Add a join to include all of the Users' Pantry Items here
-    db.User.findOne({
-      include: db.Pantry,
+    db.Users.findOne({
       where: {
         id: req.params.id
-      }
+      },
+      include: [db.Pantries]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
 
   app.post("/api/users", function(req, res) {
-    db.User.create(req.body).then(function(dbUser) {
+    db.Users.create(req.body).then(function(dbUser) {
+      console.log(dbUser);
       res.json(dbUser);
     });
+    console.log("success whoo hoo");
   });
 
   app.delete("/api/users/:id", function(req, res) {
-    db.User.destroy({
+    db.Users.destroy({
       where: {
         id: req.params.id
       }

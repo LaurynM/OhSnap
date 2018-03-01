@@ -84,6 +84,7 @@ $(document).ready(function(){
 
   function submitNewUser(NewUser) {
     $.post("/api/users/", NewUser, function() {
+      console.log("I want to sign in as a NEW user");
       window.location.href = "/page2.html";
     });
     clearFields();
