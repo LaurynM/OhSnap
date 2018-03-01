@@ -45,7 +45,6 @@ $(document).ready(function(){
 
     if(validateSignUp()){
       const newUser = {
-        id:"",
         user_name: $('#newUsername').val().trim(),
         password: $('#psw1').val().trim()
       };
@@ -74,19 +73,17 @@ $(document).ready(function(){
     if(validateSignIn()){
       alert("Sign in is valid");
       const User = {
-        id:"",
         user_name: $('#username').val().trim(),
         password: $('#psw').val().trim()
       };
-      console.log('newUser name: '+ User.user_name);
-      console.log('newUser password: '+ User.password);
+      console.log('user name: '+ User.user_name);
+      console.log('user password: '+ User.password);
       submitUser(User);
     } 
   });
 
   function submitNewUser(NewUser) {
     $.post("/api/users/", NewUser, function() {
-      console.log("I want to sign in as a NEW user");
       window.location.href = "/page2.html";
     });
     clearFields();
