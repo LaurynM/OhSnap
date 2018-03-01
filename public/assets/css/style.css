@@ -31,7 +31,8 @@ li {
 .nav {
   background-color: #9fdde0;
   width: 100%; 
-  font-weight: bold;}
+  font-weight: bold;
+  font-size: 1.2em}
 
 .jumbotron {
   background-color: #505155;
