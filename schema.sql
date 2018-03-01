@@ -1,4 +1,3 @@
-### Schema
 DROP DATABASE IF EXISTS Oh_Snap_db;
 CREATE DATABASE IF NOT EXISTS Oh_Snap_db;
 

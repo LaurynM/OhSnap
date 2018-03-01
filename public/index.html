@@ -12,37 +12,31 @@
     <!--Style CSS-->
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Life+Savers" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+       <!-- Bootstrap core CSS -->
+       <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+       <!-- Custom styles for this template -->
+       <link href="cover.css" rel="stylesheet">
 
   </head>
 
 
-
-  <body>
-    <div id="wrap">
-    <!--Navigation Bar-->
-    <div>
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="./index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./page2.html">Search</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./about.html">About</a>
-        </li>
-      </ul>
-    </div>
+ </body>
+   <!--Jumbotron-->
+   <div class="jumbotron jumbotron-fluid">
+   <h1 class="display-5 snap">Oh, Snap!</h1>
+   <div class="cover-container d-flex h-100 p-12 mx-auto flex-column">
+      <header class="masthead mb-auto">
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="./index.html">Home</a>
+            <a class="nav-link" href="./page2.html">Search</a>
+            <a class="nav-link" href="./about.html">Contact</a>
+          </nav>
+        </div>
+      </header>
+    <p></p>
 
     <div class="container">
-
-      <!--Jumbotron-->
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-5 snap">Oh, Snap!</h1>
-          <p class="lead"></p>
-        </div>
-      </div>
 
     
   <!-- start of introductory card groups: landing page -->
@@ -50,19 +44,22 @@
 
       <!-- introduction/explanation of app -->
         <div class="text-secondary intro" >
-          <p class="introText">No idea what to make with what you have? Tired of Pantry Surprise? Don't want to face people at the grocery store?</p>
-          <p class="introText">&ldquo;Oh, Snap&#33;&rdquo; has got you covered.</p>
+          <p class="introText">You've just walked in the door, after a long day. You're hungry. You have the goods, but have no clue what to make.</p>
+        <!--  <p class="introText">You open your pantry and refrigerator and look helplessly at the modge podgery of items with
+            no clue what to make.
+          </p>-->
+          <p class="introText">No worries. Oh, Snap! has got you covered. Use <br>Oh, Snap! to figure out what to make with what you have!</p>
         </div> <!-- END introduction/explanation of app -->
 
 
         <!-- the icon with link to next page: -->
         <div class="icon">
-          <h3>Click the basket to sign in or sign up.</h3>
+          <h3>Sign In or Sign Up!</h3>
           <button id="circleBtn" type="button" class="btn btn-default btn-lg" ><img class="iconImg" src="./assets/images/basket.svg"></button>
         </div><!-- END icon with link to next page: -->
       </div><!--  END card group -->
-    </div><!--  END container -->
-  </div><!--  END wrap -->
+    </div><!--  END wrap -->
+  
 
 <!-- MODAL -->
 <div class="modal fade" id="signInModal" role="dialog">
@@ -74,6 +71,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
+<<<<<<< HEAD
           <ul>
             <button id="signInBtn" class="activeBtn"><li><h4>Sign in</h4></li></button>
             <button id="signUpBtn"><li><h4>Sign up</h4></li></button>
@@ -91,9 +89,51 @@
             <div class="form-group">
                 <label for="psw2"><span class="glyphicon glyphicon-eye-open"></span> Re-enter password</label>
                 <input type="password" class="form-control" id="psw2" placeholder="Re-enter password">
+=======
+          <div class="signInUpDivs">
+            <!-- default form to show is sign in. but clicking it will also hide the other to allow toggling. -->
+            <div id="signInDiv" class="signInUpDiv activeBtn"><h4>Sign in</h4></div>
+            <!-- clicking this div hides sign in and shows sign up. -->
+            <div id="signUpDiv" class="signInUpDiv signUpDiv"><h4>Sign up</h4></div>
+          </div>
+          
+          <!-- sign IN form -->
+          <div class="signInUpForm signInForm">
+            <form role="form">
+              <div class="form-group">
+                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
+                <input id="username" type="text" class="form-control signInFormControl username" placeholder="yourname@ohsnap.com" required>
               </div>
-              <button id="modalSignIn" type="submit" class="btn btn-block"><span class="glyphicon glyphicon-off"></span> Sign in</button>
-          </form>
+              <div class="form-group">
+                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                <input id="psw" type="password" name="psw" class="form-control signInFormControl psw" placeholder="Enter password" required>
+>>>>>>> 99a3847e32610200b5080133d7d169799159a18e
+              </div>
+              <button id="modalSignIn" class="signInUpBtn"><h4>Sign In</h4></button>
+            </form>
+          </div> <!-- END SIGN IN FORM -->
+
+
+          <!-- sign UP form -->
+          <div class="signInUpForm signUpForm">
+              <form role="form">
+                <div class="form-group">
+                  <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
+                  <input id="newUsername" type="text" class="form-control signUpFormControl"   placeholder="yourname@ohsnap.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="psw1"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                  <input name="psw1" type="password" class="form-control signUpFormControl" id="psw1" placeholder="Enter password" required>
+                </div>
+                <div class="form-group">
+                  <label for="psw2"><span class="glyphicon glyphicon-eye-open"></span> Re-enter password</label>
+                  <input name="psw2" type="password" class="form-control signUpFormControl" id="psw2" placeholder="Re-enter password">
+                </div>
+                    <button id="modalSignUp" class="signInUpBtn"><h4>Sign Up</h4></button>
+                    
+  
+              </form>
+            </div> <!-- END SIGN IN FORM -->
         </div>
         <div class="modal-footer">
           <button type="submit" class="pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
@@ -103,11 +143,12 @@
       
     </div>
   </div>
+</div><!-- END wrap, needed for sticky footsie -->
 
     <footer>
         <div class="container">
           <div class="row">
-              <p>Joshua Wise | Katy Cassidy | Lauryn McFarland | Cynthia London</p>
+              <p><a href="https://github.com/wisejd02">Joshua Wise</a> | <a href="https://github.com/ihatetoast">Katy Cassidy</a> | <a href="https://github.com/LaurynM">Lauryn McFarland</a> | <a href="https://github.com/CynthiaLondon">Cynthia London</a></p
           </div>
         </div>
     </footer>
