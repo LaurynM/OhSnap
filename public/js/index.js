@@ -43,11 +43,10 @@ $(document).ready(function(){
     
     validateSignUp();
 
-    if(validateForm()){
-      alert("form is valid");
-      var newUser = {
-        user_name: $('#username').val().trim(),
-        password: $('#psw').val().trim()
+    if(validateSignUp()){
+      const newUser = {
+        user_name: $('#newUsername').val().trim(),
+        password: $('#psw1').val().trim()
       };
       console.log('newUser name: '+ newUser.user_name);
       console.log('newUser password: '+ newUser.password);
@@ -74,7 +73,6 @@ $(document).ready(function(){
     if(validateSignIn()){
       alert("Sign in is valid");
       const User = {
-        id:"",
         user_name: $('#username').val().trim(),
         password: $('#psw').val().trim()
       };
