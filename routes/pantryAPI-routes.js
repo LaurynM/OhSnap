@@ -13,7 +13,7 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the pantry items for the user
-  app.get("/api/pantry/:userId?", function(req, res) {
+  app.get("/api/pantry/:userId", function(req, res) {
     console.log(req.body)
     db.Pantry.findAll({
       where: {
@@ -53,11 +53,13 @@ module.exports = function(app) {
 
   // DELETE route for deleting pantry items
   app.delete("/api/pantry/:id", function(req, res) {
+    console.log(req.body)
     db.Pantry.destroy({
       where: {
         id: req.params.id
       }
     }).then(function(dbPantry) {
+      console.log(dbPantry);
       res.json(dbPantry);
     });
   });
