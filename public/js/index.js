@@ -10,6 +10,7 @@ $(document).ready(function(){
       $("#signInModal").modal();
   });
   $("#signUpDiv").click(function(){
+    clearFields();
     $(".signInForm").css( "display", "none" );
     $(".signUpForm").css( "display", "block" );
     // activeBtn
@@ -17,6 +18,7 @@ $(document).ready(function(){
     $("#signInDiv").removeClass("activeBtn");
   });
   $("#signInDiv").click(function(){
+    clearFields();
     $(".signInForm").css( "display", "block" );
     $(".signUpForm").css( "display", "none" );
     $(this).addClass("activeBtn");
@@ -29,7 +31,6 @@ $(document).ready(function(){
       var formValid = true;
       $('.signUpFormControl').each(function(){
         if($(this).val() === ''){
-          alert("Fields cannot be empty.");
           formValid = false;
         }
       });
@@ -43,64 +44,67 @@ $(document).ready(function(){
     validateSignUp();
 
     if(validateSignUp()){
-      alert("form is valid");
       const newUser = {
         id:"",
-        user_name: $('#username').val().trim(),
+        user_name: $('#newUsername').val().trim(),
         password: $('#psw1').val().trim()
       };
       console.log('newUser name: '+ newUser.user_name);
       console.log('newUser password: '+ newUser.password);
       submitNewUser(newUser);
-    } else {
-      alert("Please be sure to fill out all fields.");
-    }
+    } 
   }); //end the sign UP onclick evt 
 
 
-  // $("#modalSignIn").on("click", (e)=> {
-  //   e.preventDefault();
-  //   function validateSignIn(){
-  //     var formValid = true;
-  //     $('.form-control').each(function(){
-  //       if($(this).val() === ''){
-  //         alert("Fields cannot be empty.");
-  //         formValid = false;
-  //       }
-  //     });
-  //     return formValid;
-  //   };//end validateForm
-    
-  //   validateSignIn();
+  $("#modalSignIn").on("click", (e)=> {
+    e.preventDefault();
 
-  //   if(validateSignIn()){
-  //     alert("form is valid");
-  //     const User = {
-  //       id:"",
-  //       user_name: $('#username').val().trim(),
-  //       password: $('#psw').val().trim()
-  //     };
-  //     console.log('newUser name: '+ newUser.user_name);
-  //     console.log('newUser password: '+ newUser.password);
-  //     submitNewUser(newUser);
-  //   } else {
-  //     alert("Please be sure to fill out all fields.");
-  //   }
-  // });
+    function validateSignIn(){
+      var formValid = true;
+      $('.signInFormControl').each(function(){
+        if($(this).val() === ''){
+          formValid = false;
+        }
+      });
+      return formValid;
+    };//end validateForm
+    
+    validateSignIn();
+
+    if(validateSignIn()){
+      alert("Sign in is valid");
+      const User = {
+        id:"",
+        user_name: $('#username').val().trim(),
+        password: $('#psw').val().trim()
+      };
+      console.log('newUser name: '+ User.user_name);
+      console.log('newUser password: '+ User.password);
+      submitUser(User);
+    } 
+  });
 
   function submitNewUser(NewUser) {
     $.post("/api/users/", NewUser, function() {
       console.log("I want to sign in as a NEW user");
       window.location.href = "/page2.html";
     });
+    clearFields();
   }
   function submitUser(User) {
-    $.get("/api/users/:id", User, function() {
+    $.get("/api/sign-in", User, function() {
       console.log("I want to log in as an existing user");
       window.location.href = "/page2.html";
     });
+    clearFields();
   }
   
-
+  function clearFields(){
+    $('#username').val('');
+    $('#newUsername').val('');
+    $('#psw').val('');
+    $('#psw1').val('');
+    $('#psw2').val('');  
+  }
 
 }); //end document ready
