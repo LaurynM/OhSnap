@@ -54,38 +54,40 @@ function showUserItems(data){
           </span>`);
       });
 
-      $(document).on("click", "a.remove" , function() {
-        $(this).parent().remove();
-        removeID = $(this).parent().attr("id");
-        console.log(`Removed ID: ${removeID}`);
-        deleteItem(removeID);
-      }); 
-
-       //add pantry items to ingredient search list
-        $(document).on("click", "a.add" , function() {
-            var item = $(this).parent().text().trim();
-    
-            //remove the special characters from the beginning and end of the ingredient
-            item = item.substr(1,(item.length-2));
-           
-            //console.log($(this).attr("id"));
-            if ($(this).attr("id") == "added") {
-                console.log("Item removed: " + item);
-                $(this).parent().css('background-color', 'transparent');
-                var i = ingredients.indexOf(item);
-                ingredients.splice(i, 1);//remove the clicked item fron the ingreidients search
-                $(this).attr("id", "removed")
-                console.log(ingredients);
-            } else {
-                console.log("Item added: " + item);
-                $(this).parent().css('background-color', 'rgba(246, 65, 107, 0.2)');
-                ingredients.push(item);
-                console.log(ingredients);
-                $(this).attr("id", "added")
-            }
-        });
-
+      
 }
+
+$(document).on("click", "a.remove" , function() {
+    $(this).parent().remove();
+    removeID = $(this).parent().attr("id");
+    console.log(`Removed ID: ${removeID}`);
+    deleteItem(removeID);
+  }); 
+
+   //add pantry items to ingredient search list
+    $(document).on("click", "a.add" , function() {
+        var item = $(this).parent().text().trim();
+
+        //remove the special characters from the beginning and end of the ingredient
+        item = item.substr(1,(item.length-2));
+       
+        //console.log($(this).attr("id"));
+        if ($(this).attr("id") == "added") {
+            console.log("Item removed: " + item);
+            $(this).parent().css('background-color', 'transparent');
+            var i = ingredients.indexOf(item);
+            ingredients.splice(i, 1);//remove the clicked item fron the ingreidients search
+            $(this).attr("id", "removed")
+            console.log(ingredients);
+        } else {
+            console.log("Item added: " + item);
+            $(this).parent().css('background-color', 'rgba(246, 65, 107, 0.2)');
+            ingredients.push(item);
+            console.log(ingredients);
+            $(this).attr("id", "added")
+        }
+    });
+
 
 function deleteItem(id) {
     console.log("deleting : "+id)
