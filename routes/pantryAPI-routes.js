@@ -12,26 +12,17 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the pantry items
-  app.get("/api/pantry", function(req, res) {
-    // var query = {};
-    // if (req.query.user_id) {
-    //   query.UserId = req.query.user_id;
-    // }
-    // 1. Add a join here to include all of the Users' pantries
+  // GET route for getting all of the pantry items for the user
+  app.get("/api/pantry/:userId?", function(req, res) {
+    console.log(req.body)
     db.Pantry.findAll({
       where: {
-        id: req.params.id
+        user_id: req.params.userId
       }
     }).then(function(dbPantry) {
       console.log(dbPantry);
       res.json(dbPantry);
     });
-    //   include: db.User,
-    //   where: query
-    // }).then(function(dbPantry) {
-    //   res.json(dbPantry);
-    // });
   });
 
   // Get rotue for retrieving a single pantry item
@@ -40,7 +31,7 @@ module.exports = function(app) {
     db.Pantry.findOne({
       include: db.User,
       where: {
-        id: req.params.id
+        user_id: req.params.id
       }
     }).then(function(dbPantry) {
       console.log(dbPantry);

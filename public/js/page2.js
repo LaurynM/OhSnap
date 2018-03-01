@@ -1,11 +1,13 @@
 //add item to pantry
+var userId = 2;
+
 
 $('#pantry-input').on('click', function() {
-    var userID = 2;
+    
    if($('#basics').val()){
         $('#inputMsg').remove();
         var addItem = {
-            user_id: parseInt(userID),
+            user_id: parseInt(userId),
             item:  $('#basics').val().trim()
         };
         $('#basics').val("");
@@ -27,18 +29,17 @@ function submitNewPantryItem(addItem) {
       console.log(res);
       //window.location.href = "/page2.html";
     });
-    var id = {
-        id:parseInt(userID)
-    }
-    getPantryItems(id)
+   
+    getPantryItems()
   }
 
-function getPantryItems(userID){
-    $.get("/api/pantry", userID, function(req, res) {
+  getPantryItems()
+
+function getPantryItems(){
+    $.get("/api/pantry/"+ userId, function(data) {
         console.log("req");
-        console.log(req);
-        console.log("res");
-        console.log(res);
+        console.log(data);
+        
         //window.location.href = "/page2.html";
       });
 }
