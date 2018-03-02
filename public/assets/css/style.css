@@ -1,16 +1,16 @@
 html, body {
-  height: 100%;
-  padding: 0;
-  margin: -50;
+  height: 50%;
   font-family: 'Life Savers', sans-serif; 
   background-color: #adada9}
 
-
-
+h3 {
+  font-weight: bold;
+}
 
 a {
   text-decoration: none;
-  color: #fafafa; }
+  color: #3a3a38;
+  font-weight: bold; }
 
 li {
   list-style: none; }
@@ -30,7 +30,9 @@ li {
 
 .nav {
   background-color: #9fdde0;
-  width: 100%; }
+  width: 100%; 
+  font-weight: bold;
+  font-size: 1.2em}
 
 .jumbotron {
   background-color: #505155;
@@ -42,7 +44,6 @@ li {
   border: 0px solid #000000; }
 
 .snap {
-
   font-family: 'Fredericka the Great', sans-serif;
   color: #fafafa;
   font-size: 2.5em; }
@@ -93,6 +94,7 @@ button {
   }
 
 footer {
+  
   background-color: #60c3c9;
   padding: 0.7em;
   width: 100%;
@@ -106,7 +108,7 @@ footer {
     font-size: 0.7em;
     padding-top: 0.5em;
     margin: 0 auto;
-    color: #3a3a38; }
+    color: #fafafa; }
     @media screen and (min-width: 768px) {
       footer p {
         font-size: 1em; } }
@@ -121,7 +123,7 @@ footer {
       justify-content: space-between; } }
 
 .icon, .intro {
-  background-color: rgba(250, 250, 250, 0.9);
+  background-color: rgba(242, 247, 250, 0.842);
   border-radius: 5px; }
   @media screen and (min-width: 768px) {
     .icon, .intro {
@@ -137,7 +139,8 @@ footer {
       padding: 2em; } }
 
 .introText {
-  font-size: 1em; }
+  font-size: 4em;
+  font-weight: bold; }
   @media screen and (min-width: 440px) {
     .introText {
       font-size: 1.25em; } }
@@ -172,6 +175,11 @@ footer {
 .hover {
   background-color: black; }
 
+  h6 {
+  font-size: 1.1em;
+  font-weight: bold;
+  }
+
 #restrictionsDiv {
   display: flex;
   flex-direction: column; }
@@ -190,6 +198,7 @@ footer {
   justify-content: space-between; }
 
 .pantryBtnDiv {
+  
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -215,7 +224,6 @@ footer {
 
 .spoiled {
   color: #2c5057;
-
   text-shadow: 0px 0px 2px #16053f; }
 
 .remove {
@@ -263,8 +271,15 @@ footer {
     .pantrySearch {
       margin-top: 0em; } }
 
+#lblPntry {
+  font-size: 1.1em;
+  font-weight: bold;
+ }
+
 .pantryDiv {
   display: flex;
+  font-size: 1.2em;
+  font-weight: bold;
   flex-wrap: wrap;
   flex-basis: 58%;
   padding: 1em; }
@@ -325,6 +340,7 @@ footer {
   font-size: 1em; }
 
 .teamCards {
+ 
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -341,13 +357,14 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(250, 250, 250, 0.9);
+  background-color: rgba(229, 233, 240, 0.9);
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  max-width: 20em; }
+  max-width: 2em; }
   .teamCard img {
     border-radius: 5px;
-    box-shadow: 0px 3px 3px 0px rgba(63, 185, 223, 0.9); }
+    box-shadow: 0px 3px 3px 0px rgba(63, 185, 223, 0.9); 
+}
   @media screen and (min-width: 992px) {
     .teamCard {
       max-width: 15em; } }
@@ -359,3 +376,38 @@ footer {
     color: #675C52; }
 
 /*# sourceMappingURL=style.css.map */
+
+/* MODAL SPECIFIC */
+
+.modal-content {
+  background-color: #f0f0f0;
+}
+.signInUpDivs{
+  display: flex;
+}
+.signInUpDiv {
+  background-color:  #5051558e;
+  border: 2px solid #848485;
+  border-bottom: 2px solid #9fdde0;
+  border-bottom: 0px;
+  padding: 0.5em;
+  color: #fafafa;
+  cursor: pointer;
+}
+.signInUpDiv h4 {
+  margin:0;
+}
+.signInUpForm {
+  border: 2px solid #9fdde0;
+  padding: 0.5em;
+  background-color: #fff;
+}
+.signUpForm {
+  display:none;
+}
+
+.activeBtn {
+  background-color:  #505155;
+  border: 2px solid #9fdde0;
+  border-bottom: 0px
+  }

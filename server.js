@@ -8,7 +8,7 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
-// var db = require("./models");
+var db = require("./models");
 
 // Sets up the Express app to handle data parsing
 
@@ -25,6 +25,12 @@ app.use(express.static("public"));
 require("./routes/html-routes.js")(app);
 require("./routes/userAPI-routes.js")(app);
 require("./routes/pantryAPI-routes.js")(app);
-app.listen(PORT, function(){
-  console.log("Waddap? Oh Snap App on PORT "+PORT);
-})
+// app.listen(PORT, function(){
+//   console.log("Oh Snap App Listening on PORT "+PORT);
+// })
+
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("Oh Snap App listening on PORT "+PORT);
+  });
+});

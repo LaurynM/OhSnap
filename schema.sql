@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS Oh_Snap_db;
 CREATE DATABASE IF NOT EXISTS Oh_Snap_db;
 
-USE Oh_Snap_db;
+-- USE Oh_Snap_db;
 
 CREATE TABLE users
 (
@@ -26,7 +26,7 @@ CREATE TABLE pantries
 	updatedat DATE,
     PRIMARY KEY (id)
 
-);
+-- );
 
 
 CREATE TABLE recipes
@@ -39,4 +39,4 @@ CREATE TABLE recipes
 	updatedat DATE,
     PRIMARY KEY (id)
 
-);
+-- );
