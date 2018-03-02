@@ -214,7 +214,12 @@ footer {
   #temporaryPantry li i {
     color: #675C52;
     margin-right: 0.4em; }
-
+input{
+  margin: 10px;
+}
+#pantry-input{
+  margin-left:10px; 
+}
 .fireEdam {
   display: flex;
   flex-wrap: wrap; }

@@ -5,6 +5,7 @@ var ingredients = [];
 $('#pantry-input').on('click', function() {
     
    if($('#basics').val()){
+      ingredients = [];
         $('#inputMsg').remove();
         var addItem = {
             user_id: parseInt(userId),
@@ -14,11 +15,31 @@ $('#pantry-input').on('click', function() {
         console.log(addItem);
         submitNewPantryItem(addItem);        
    }else{
-       console.log("no val")
-       $('#lblPntry').append('<div id="inputMsg">Please enter something to add to pantry!</div>');
+      $('#inputMsg').remove();
+      $('#lblPntry').append('<div id="inputMsg">Please enter something to add to pantry!</div>');
    }
    
 });
+
+var input = document.getElementById("basics");
+var awesomeplete = new Awesomplete(input);
+function recipeapicallback(fillData) {
+    awesomeplete.list = fillData;
+}
+var inString;
+$('#basics').on('input', function() {
+     inString = $(this).val();
+    getAutocomplete(inString);
+});
+function getAutocomplete(inString){
+    var queryURL = `http://api.edamam.com/auto-complete?q=${inString}&limit=10&app_id=cb021850&app_key=3f0c4b8c9adcb08d63cbde97230db9f8&callback=recipeapicallback`
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        dataType: 'jsonp'
+      });
+    
+};
 
 
 function submitNewPantryItem(addItem) {
