@@ -1,12 +1,14 @@
-var db = require("../models");
+const crypto = require('crypto');
+
+const db = require("../models");
+const passport = require("../helpers/passport.js");
 
 module.exports = function(app) {
     app.get("/api/sign-in", function(req, res) {
-    // 0. Verify a User's password
     db.Users.findOne({
         where: {
-          user_name: req.params.user_name,
-          password: req.params.password
+          user_name: req.body.user_name,
+          password: req.body.password
         }
       }).then(function(dbUser) {
           if (dbUser !== undefined) {
@@ -41,7 +43,6 @@ module.exports = function(app) {
       console.log(dbUser);
       res.json(dbUser);
     });
-    console.log("success whoo hoo");
   });
 
   app.delete("/api/users/:id", function(req, res) {
@@ -53,5 +54,10 @@ module.exports = function(app) {
       res.json(dbUser);
     });
   });
+  app.post("/api/sign-in", passport.authenticate("local"), function(req, res) {
+    res.json("/page2");
+  });
+
+
 
 };

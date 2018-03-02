@@ -71,7 +71,6 @@ $(document).ready(function(){
     validateSignIn();
 
     if(validateSignIn()){
-      alert("Sign in is valid");
       const User = {
         user_name: $('#username').val().trim(),
         password: $('#psw').val().trim()
@@ -85,13 +84,17 @@ $(document).ready(function(){
   function submitNewUser(NewUser) {
     $.post("/api/users/", NewUser, function() {
       console.log("I want to sign in as a NEW user");
+    }).then(function(data){
+      clearFields();
+      console.log("This is the user data: ", data);
       window.location.href = "/page2.html";
+    }).catch(function(err)  {
+      console.log(err);
     });
-    clearFields();
+    
   }
   function submitUser(User) {
     $.get("/api/sign-in", User, function() {
-      console.log("I want to log in as an existing user");
       window.location.href = "/page2.html";
     });
     clearFields();
