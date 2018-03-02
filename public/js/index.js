@@ -45,7 +45,8 @@ $(document).ready(function(){
 
     if(validateSignUp()){
       const newUser = {
-        user_name: $('#newUsername').val().trim(),
+        id:"",
+        user_name: $('#username').val().trim(),
         password: $('#psw1').val().trim()
       };
       console.log('newUser name: '+ newUser.user_name);

@@ -6,13 +6,13 @@ module.exports = function(sequelize, DataTypes) {
 
   });
 
-  Users.associate = function(models) {
-    // Associating User with Pantry
-    // When a User is deleted, also delete the associated Pantry
-    Users.hasMany(models.Pantries, {
-      onDelete: "cascade"
-    });
-  };
-
+  // Users.associate = function(models) {
+  //   // Associating User with Pantry
+  //   // When a User is deleted, also delete the associated Pantry
+  //   Users.hasMany(models.Pantries, {
+  //     onDelete: "cascade"
+  //   });
+  // };
+  //Users.sync();
   return Users;
 };
