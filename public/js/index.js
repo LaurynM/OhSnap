@@ -5,6 +5,7 @@
 
 
 $(document).ready(function(){
+  localStorage.removeItem("key");
   //toggle modal
   $("#circleBtn").click(function(){
       $("#signInModal").modal();
@@ -46,7 +47,7 @@ $(document).ready(function(){
     if(validateSignUp()){
       const newUser = {
         id:"",
-        user_name: $('#username').val().trim(),
+        user_name: $('#newUsername').val().trim(),
         password: $('#psw1').val().trim()
       };
       console.log('newUser name: '+ newUser.user_name);
@@ -72,7 +73,7 @@ $(document).ready(function(){
     validateSignIn();
 
     if(validateSignIn()){
-      alert("Sign in is valid");
+     // alert("Sign in is valid");
       const User = {
         user_name: $('#username').val().trim(),
         password: $('#psw').val().trim()
@@ -84,16 +85,32 @@ $(document).ready(function(){
   });
 
   function submitNewUser(NewUser) {
-    $.post("/api/users/", NewUser, function() {
+    $.post("/api/users/", NewUser, function(data,res) {
       console.log("I want to sign in as a NEW user");
+      console.log(res);
+      console.log(data);
+      localStorage.setItem("key", data.id);
       window.location.href = "/page2.html";
     });
     clearFields();
   }
   function submitUser(User) {
-    $.get("/api/sign-in", User, function() {
+    console.log("User");
+    console.log(User);
+    $.get("/api/sign-in/"+User.user_name+"/"+User.password, function(data,res) {
       console.log("I want to log in as an existing user");
-      window.location.href = "/page2.html";
+      console.log('res');
+      console.log(res);
+      console.log('data');
+      console.log(data);
+      if(data){
+        console.log(data);
+        localStorage.setItem("key", data.id);
+        window.location.href = "/page2.html";
+      }else{
+        alert('You must create a login to use our wonderful system!!');
+      }
+      
     });
     clearFields();
   }

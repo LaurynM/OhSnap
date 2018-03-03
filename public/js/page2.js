@@ -1,5 +1,5 @@
 //add item to pantry
-var userId = 2;
+var userId = localStorage.getItem("key");
 var ingredients = [];
 
 $('#pantry-input').on('click', function() {
