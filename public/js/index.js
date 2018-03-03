@@ -89,7 +89,7 @@ $(document).ready(function(){
       console.log("I want to sign in as a NEW user");
       console.log(res);
       console.log(data);
-      localStorage.setItem("key", data.id);
+      localStorage.setItem("key", data);
       window.location.href = "/page2.html";
     });
     clearFields();
@@ -105,7 +105,7 @@ $(document).ready(function(){
       console.log(data);
       if(data){
         console.log(data);
-        localStorage.setItem("key", data.id);
+        localStorage.setItem("key", data);
         window.location.href = "/page2.html";
       }else{
         alert('You must create a login to use our wonderful system!!');

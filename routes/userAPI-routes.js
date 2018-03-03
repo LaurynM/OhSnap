@@ -18,7 +18,15 @@ module.exports = function(app) {
           // }
           console.log('dbUser');
           console.log(dbUser);
-        res.json(dbUser);
+          console.log('res.json(dbUser)');
+          if(dbUser){
+            console.log(dbUser.id);
+            res.json(dbUser.id);
+          }else{
+            console.log(dbUser);
+            res.json(dbUser);
+          }
+          
       });
     });
   app.get("/api/users", function(req, res) {
@@ -46,7 +54,7 @@ module.exports = function(app) {
     db.Users.create(req.body).then(function(dbUser) {
       console.log('post api users dbUser');
       console.log(dbUser);
-      res.json(dbUser);
+      res.json(dbUser.id);
     });
   });
 
