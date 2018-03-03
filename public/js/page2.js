@@ -33,7 +33,7 @@ $('#basics').on('input', function() {
     getAutocomplete(inString);
 });
 function getAutocomplete(inString){
-    var queryURL = `http://api.edamam.com/auto-complete?q=${inString}&limit=10&app_id=cb021850&app_key=3f0c4b8c9adcb08d63cbde97230db9f8&callback=recipeapicallback`
+    var queryURL = `https://api.edamam.com/auto-complete?q=${inString}&limit=10&app_id=cb021850&app_key=3f0c4b8c9adcb08d63cbde97230db9f8&callback=recipeapicallback`
     $.ajax({
         url: queryURL,
         method: "GET",
