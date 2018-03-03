@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./public/assets/css/awesomplete.css"/>
     <!--Style CSS-->
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Life+Savers" rel="stylesheet">>
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
        <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -57,13 +57,10 @@
             <label  id="lblPntry" for="pantry-add">Enter Pantry Item:</label>
             <div class="pantryForm">
               <input id="basics" type="text">
+            </div>
+            <div class="pantryForm">
               <button class="btn pantryBtn" id="pantry-input" type="submit">Add Item</button>
             </div>
-          </div>
-          
-          <div class="pantryBtnDiv">
-            <h6>Pantry content:</h6>
-            <button class="btn" id="pantry-submit" type="submit">Add All</button>
           </div>
           <div class="pantryList">
             <div>
@@ -79,16 +76,17 @@
           <div class="pantrySearch">
             <!-- LAURYN'S FIREBASE -->
             <div class="fireEdam">
-            <div class="pantryDiv">
-              <p>These items are currently in your pantry. Click "&cross;" to remove an item. Click "&check;" to add it to your ingredients search. Check <span class="spoiled">older items</span> for freshness.</p>
+            <div class="pantryDiv" id="divPantryItems">
+              <p>These items are currently in your pantry. Click "&cross;" to remove an item. Click "&check;" to add it to your ingredients search.</p>
               
             </div>
+            <div class="pantryItemsDiv"></div>
             <!-- JOSH'S API -->
             <div class="recSearch">
                 <h6>Ready?<strong>▼</strong></h6>
                 
                 <div class="card-body text-secondary">
-                  <button class="food-icon-restr" id="peanut-free">Oh, Snap!</button>
+                  <button class="food-icon-restr" id="searchRecipes">Oh, Snap!</button>
                 </div>
               </div>
             </div>
@@ -96,15 +94,16 @@
           </div>
         
           <!-- cards fill here: -->
+          <div class="cardGroup"></div>
     <!-- </section> -->
+
 
 </div><!-- END wrap, needed for sticky footsie -->
 
     <footer>
         <div class="container">
           <div class="row">
-              <p>
-                <a href="https://github.com/wisejd02">Joshua Wise</a> | <a href="https://github.com/ihatetoast">Katy Cassidy</a> | <a href="https://github.com/LaurynM">Lauryn McFarland</a> | <a href="https://github.com/CynthiaLondon">Cynthia London</a></p>
+              <p><a href="https://github.com/wisejd02">Joshua Wise</a> | <a href="https://github.com/ihatetoast">Katy Cassidy</a> | <a href="https://github.com/LaurynM">Lauryn McFarland</a> | <a href="https://github.com/CynthiaLondon">Cynthia London</a></p>
           </div>
         </div>
       </div>
@@ -116,13 +115,19 @@
 
     <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+      <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://use.fontawesome.com/ecb99ae562.js"></script>
       <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
       <!--     Awesomeplete -->
-      <!-- <script src="./assets/javascript/awesomplete.js"></script> -->
+      <script src="/js/awesomplete.js"></script>
+      <script src="/js/page2.js"></script>
+      <!-- PDF kit -->
+      <!-- <script src="/js/print.js"></script> -->
+      <script src="/js/pdfPrint.js"></script>
+      <!-- <script src="/js/pdf.js"></script> -->
   </body>
 </html>

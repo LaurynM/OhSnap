@@ -12,17 +12,15 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the pantry items
-  app.get("/api/pantry", function(req, res) {
-    var query = {};
-    if (req.query.user_id) {
-      query.UserId = req.query.user_id;
-    }
-    // 1. Add a join here to include all of the Users' pantries
+  // GET route for getting all of the pantry items for the user
+  app.get("/api/pantry/:userId", function(req, res) {
+    console.log(req.body)
     db.Pantries.findAll({
-      include: db.User,
-      where: query
+      where: {
+        user_id: req.params.userId
+      }
     }).then(function(dbPantry) {
+      console.log(dbPantry);
       res.json(dbPantry);
     });
   });
@@ -33,7 +31,7 @@ module.exports = function(app) {
     db.Pantries.findOne({
       include: db.User,
       where: {
-        id: req.params.id
+        user_id: req.params.id
       }
     }).then(function(dbPantry) {
       console.log(dbPantry);
@@ -41,6 +39,17 @@ module.exports = function(app) {
     });
   });
 
+  // POST route for saving a new pantry items
+  // app.post("/api/pantry", function(req, res) {
+  //   console.log("req");
+  //   console.log(req.body);
+  //   // console.log("res");
+  //   // console.log(res);
+  //   db.Pantries.create(req.body).then(function(dbPantry) {
+  //     console.log(dbPantry);
+  //     res.json(dbPantry);
+  //   });
+  // });
   // POST route for saving a new pantry items
   app.post("/api/pantry", function(req, res) {
     db.Pantries.create(req.body).then(function(dbPantry) {
@@ -50,11 +59,13 @@ module.exports = function(app) {
 
   // DELETE route for deleting pantry items
   app.delete("/api/pantry/:id", function(req, res) {
+    console.log(req.body)
     db.Pantries.destroy({
       where: {
         id: req.params.id
       }
     }).then(function(dbPantry) {
+      console.log(dbPantry);
       res.json(dbPantry);
     });
   });

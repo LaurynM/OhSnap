@@ -13,31 +13,30 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
+<<<<<<< HEAD
   app.get("/about", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/about.html"));
   });
+=======
+  // about route loads about.html
+  app.get("/about", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/about.html"));
+  });
+    // page2 route loads page2.html
+>>>>>>> c5f68d6b902817b751e724fa6fb88f27ba706dba
   app.get("/page2", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/page2.html"));
   });
 
-};
-
-//IN PROGRESS
-module.exports = function(app) {
-  //WANT TO SEE IF USER IS LOGGED IN. IF SO, JUST HAVE THEM REDIR TO PAGE2
-  app.get("/", function (req, res) {
-    console.log("User is KNOWN to us. ");
-    if (req.user) {
-        res.redirect("/page2.html");
-    }
-    console.log("User is UNKNOWN to us. ");
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+  // print.js route loads PDFs
+  app.get('/print.js*', function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/js/print.js"));
   });
 
-  //WANT TO SEE IF USER IS IN DB. AS IN AUTHENTICATED. USING M/W OF isAuth
-  app.get("/", isAuth, function (req, res) {
-    //isAuth is helper m/w that returns next()if auth but redirs if not
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+  // pdf.js route loads PDFs
+  app.get('/pdf.js*', function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/js/pdf.js"));
   });
+
 
 };

@@ -1,16 +1,24 @@
 html, body {
-  height: 25%;
+  height: 50%;
   font-family: 'Life Savers', sans-serif; 
   background-color: #adada9}
 
-
+h3 {
+  font-weight: bold;
+}
 
 a {
   text-decoration: none;
-  color: #fafafa; }
+  color: #3a3a38;
+  font-weight: bold; }
 
 li {
   list-style: none; }
+
+iframe {
+  height: 700px;
+  width: 100%;
+}
 
 #wrap {
   min-height: 25%;
@@ -27,7 +35,9 @@ li {
 
 .nav {
   background-color: #9fdde0;
-  width: 100%; }
+  width: 100%; 
+  font-weight: bold;
+  font-size: 1.2em}
 
 .jumbotron {
   background-color: #505155;
@@ -72,10 +82,24 @@ button {
   color: #fafafa;
   cursor: pointer; }
 
+.activeBtn {
+  background-color:  #505155;
+  border: 4px solid #9fdde0;
+  border-radius: 10px;
+  color: #fafafa;
+  cursor: pointer; }
 
+  
+.activeBtn:hover {background-color:  #b3b4b6}
 
+.activeBtn:active {
+  background-color: #58b6bb;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  }
 
 footer {
+  
   background-color: #60c3c9;
   padding: 0.7em;
   width: 100%;
@@ -89,7 +113,7 @@ footer {
     font-size: 0.7em;
     padding-top: 0.5em;
     margin: 0 auto;
-    color: #3a3a38; }
+    color: #fafafa; }
     @media screen and (min-width: 768px) {
       footer p {
         font-size: 1em; } }
@@ -104,7 +128,7 @@ footer {
       justify-content: space-between; } }
 
 .icon, .intro {
-  background-color: rgba(250, 250, 250, 0.9);
+  background-color: rgba(242, 247, 250, 0.842);
   border-radius: 5px; }
   @media screen and (min-width: 768px) {
     .icon, .intro {
@@ -120,7 +144,8 @@ footer {
       padding: 2em; } }
 
 .introText {
-  font-size: 1em; }
+  font-size: 4em;
+  font-weight: bold; }
   @media screen and (min-width: 440px) {
     .introText {
       font-size: 1.25em; } }
@@ -155,6 +180,11 @@ footer {
 .hover {
   background-color: black; }
 
+  h6 {
+  font-size: 1.1em;
+  font-weight: bold;
+  }
+
 #restrictionsDiv {
   display: flex;
   flex-direction: column; }
@@ -173,6 +203,7 @@ footer {
   justify-content: space-between; }
 
 .pantryBtnDiv {
+  
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -188,7 +219,12 @@ footer {
   #temporaryPantry li i {
     color: #675C52;
     margin-right: 0.4em; }
-
+input{
+  margin: 10px;
+}
+#pantry-input{
+  margin-left:10px; 
+}
 .fireEdam {
   display: flex;
   flex-wrap: wrap; }
@@ -245,8 +281,15 @@ footer {
     .pantrySearch {
       margin-top: 0em; } }
 
+#lblPntry {
+  font-size: 1.1em;
+  font-weight: bold;
+ }
+
 .pantryDiv {
   display: flex;
+  font-size: 1.2em;
+  font-weight: bold;
   flex-wrap: wrap;
   flex-basis: 58%;
   padding: 1em; }
@@ -307,6 +350,7 @@ footer {
   font-size: 1em; }
 
 .teamCards {
+ 
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -323,13 +367,14 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(250, 250, 250, 0.9);
+  background-color: rgba(229, 233, 240, 0.9);
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   max-width: 2em; }
   .teamCard img {
     border-radius: 5px;
-    box-shadow: 0px 3px 3px 0px rgba(63, 185, 223, 0.9); }
+    box-shadow: 0px 3px 3px 0px rgba(63, 185, 223, 0.9); 
+}
   @media screen and (min-width: 992px) {
     .teamCard {
       max-width: 15em; } }
@@ -340,6 +385,10 @@ footer {
   .githubBtn:hover {
     color: #675C52; }
 
+<<<<<<< HEAD
+=======
+/*# sourceMappingURL=style.css.map */
+>>>>>>> c5f68d6b902817b751e724fa6fb88f27ba706dba
 
 /* MODAL SPECIFIC */
 
@@ -375,4 +424,3 @@ footer {
   border: 2px solid #9fdde0;
   border-bottom: 0px
   }
-

@@ -4,19 +4,32 @@ const db = require("../models");
 const passport = require("../helpers/passport.js");
 
 module.exports = function(app) {
-    app.get("/api/sign-in", function(req, res) {
+    app.get("/api/sign-in/:user_name/:password", function(req, res) {
+    // 0. Verify a User's password
+    console.log('req.body');
+    console.log(req.body);
     db.Users.findOne({
         where: {
           user_name: req.body.user_name,
           password: req.body.password
         }
       }).then(function(dbUser) {
-          if (dbUser !== undefined) {
-            return true;
-          } else {
-            return false;
+          // if (dbUser !== undefined) {
+          //   return true;
+          // } else {
+          //   return false;
+          // }
+          console.log('dbUser');
+          console.log(dbUser);
+          console.log('res.json(dbUser)');
+          if(dbUser){
+            console.log(dbUser.id);
+            res.json(dbUser.id);
+          }else{
+            console.log(dbUser);
+            res.json(dbUser);
           }
-        res.json(dbUser);
+          
       });
     });
   app.get("/api/users", function(req, res) {
@@ -39,9 +52,12 @@ module.exports = function(app) {
   });
 
   app.post("/api/users", function(req, res) {
+    console.log('post api users req.body')
+    console.log(req.body)
     db.Users.create(req.body).then(function(dbUser) {
+      console.log('post api users dbUser');
       console.log(dbUser);
-      res.json(dbUser);
+      res.json(dbUser.id);
     });
   });
 
