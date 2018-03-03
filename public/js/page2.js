@@ -180,6 +180,7 @@ function createRecipeCards(response){
       </div>
       <button type="button" class="printBtn" data-toggle="modal" data-target="#a${hits}printModal" id="print${hits}">Print as PDF</button>
       <!-- Print Modal -->
+      <!-- 
       <div class="modal fade" id="a${hits}printModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -197,6 +198,7 @@ function createRecipeCards(response){
           </div>
         </div>
       </div>
+      -->
     </div>
             `)
     $.each(value.recipe.ingredients, function(index, value){          
