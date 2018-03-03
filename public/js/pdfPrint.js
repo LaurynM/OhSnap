@@ -1,7 +1,7 @@
 $(document).on('click', '.printBtn', function(){
   var index = this.id;
   index = index.replace("print", "");
-  alert("You clicked on id: " + index);
+  console.log("You clicked on id: " + index);
 
   var printData = {
     title: "demo"
