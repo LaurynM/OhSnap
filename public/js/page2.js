@@ -102,7 +102,7 @@ $(document).on("click", "a.add" , function() {
     console.log(ingredients);
   } else {
     console.log("Item added: " + item);
-    $(this).parent().css('background-color', 'rgba(246, 65, 107, 0.2)');
+    $(this).parent().css('background-color', '#9fdde0');
     ingredients.push(item);
     console.log(ingredients);
     $(this).attr("id", "added")
