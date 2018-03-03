@@ -179,8 +179,28 @@ function createRecipeCards(response){
           </div>
         </div>
       </div>
-      <button class="nutBtn"><a href='javascript:void(0);'>Nutritional Value</a></button>  
+      <button type="button" class="printBtn" data-toggle="modal" data-target="#a${hits}printModal" id="print${hits}">Print as PDF</button>
+      <!-- Print Modal -->
+      <!-- 
+      <div class="modal fade" id="a${hits}printModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body" id="body${hits}" >
+
+              <iframe id="frame${hits}" ></iframe>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
+      -->
+    </div>
             `)
     $.each(value.recipe.ingredients, function(index, value){          
       $('#a'+hits).append(`<li>${value.text}</li>`)  
