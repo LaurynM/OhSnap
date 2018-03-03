@@ -8,7 +8,22 @@ var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 
-if (config.use_env_variable) {
+// var mysql = require('mysql');
+// // var connection;
+// if (process.env.JAWSDB_URL) {
+//   db = mysql.createConnection(process.env.JAWSDB_URL);
+// } else {
+//   db = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'root',
+//     database: 'Oh_Snap_db'
+//   });
+// };
+
+if (process.env.JAWSDB_URL) {
+  var sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable],{define:{timestamp:false}});
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config, {define:{timestamp:false}});
