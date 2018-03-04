@@ -1,155 +1,215 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Oh, Snap!</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <!-- animate css  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-    <!--Style CSS-->
-    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Life+Savers" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-       <!-- Bootstrap core CSS -->
-       <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-       <!-- Custom styles for this template -->
-       <link href="cover.css" rel="stylesheet">
-
-  </head>
-
-
- </body>
-   <!--Jumbotron-->
-   <div class="jumbotron jumbotron-fluid">
-   <h1 class="display-5 snap">Oh, Snap!</h1>
-   <div class="cover-container d-flex h-100 p-12 mx-auto flex-column">
-      <header class="masthead mb-auto">
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="./index.html">Home</a>
-            <a class="nav-link" href="./page2.html">Search</a>
-            <a class="nav-link" href="./about.html">Contact</a>
-          </nav>
-        </div>
-      </header>
-    <p></p>
-
-    <div class="container">
-
-    
-  <!-- start of introductory card groups: landing page -->
-      <div class="divHolder">
-
-      <!-- introduction/explanation of app -->
-        <div class="text-secondary intro" >
-          <p class="introText">You've just walked in the door, after a long day. You're hungry. You have the goods, but have no clue what to make.</p>
-        <!--  <p class="introText">You open your pantry and refrigerator and look helplessly at the modge podgery of items with
-            no clue what to make.
-          </p>-->
-          <p class="introText">No worries. Oh, Snap! has got you covered. Use <br>Oh, Snap! to figure out what to make with what you have!</p>
-        </div> <!-- END introduction/explanation of app -->
-
-
-        <!-- the icon with link to next page: -->
-        <div class="icon">
-          <h3>Sign In or Sign Up!</h3>
-          <strong>▼</strong>
-          <button id="circleBtn" type="button" class="btn btn-default btn-lg" ><img class="iconImg" src="./assets/images/basket.svg"></button>
-        </div><!-- END icon with link to next page: -->
-      </div><!--  END card group -->
-    </div><!--  END wrap -->
-  
-
-<!-- MODAL -->
-<div class="modal fade" id="signInModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="signInUpDivs">
-            <!-- default form to show is sign in. but clicking it will also hide the other to allow toggling. -->
-            <div id="signInDiv" class="signInUpDiv activeBtn"><h4>Sign in</h4></div>
-            <!-- clicking this div hides sign in and shows sign up. -->
-            <div id="signUpDiv" class="signInUpDiv signUpDiv"><h4>Sign up</h4></div>
+<html lang="en" class="fa-events-icons-ready">
+   <head>
+      <title>
+         Oh, Snap!
+      </title>
+      
+      <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"/>
+      
+      <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Life+Savers" rel="stylesheet"/>
+      <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+      
+      <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet"/>
+      
+      <link href="cover.css" rel="stylesheet"/>
+      <link href="https://use.fontawesome.com/ecb99ae562.css" media="all" rel="stylesheet"/>
+   </head>
+   <body>
+      
+      <div class="jumbotron jumbotron-fluid">
+         <h1 class="display-5 snap">
+            Oh, Snap!
+         </h1>
+         <div class="cover-container d-flex h-100 p-12 mx-auto flex-column">
+            <header class="masthead mb-auto">
+               <nav class="nav nav-masthead justify-content-center">
+                  <a class="nav-link active" href="./index.html">
+                     Home
+                  </a>
+                  
+                  <a class="nav-link" href="./about.html">
+                     Contact
+                  </a>
+               </nav>
+            </header>
+         </div>
+         <p>
+         </p>
+         <div class="container">
             
-          </div>
-          
-          <!-- sign IN form -->
-          <div class="signInUpForm signInForm">
-            <form role="form">
-              <div class="form-group">
-                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
-                <input id="username" type="text" class="form-control signInFormControl username" placeholder="yourname@ohsnap.com" required>
-              </div>
-              <div class="form-group">
-                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                <input id="psw" type="password" name="psw" class="form-control signInFormControl psw" placeholder="Enter password" required>
-              </div>
-              <button id="modalSignIn" class="signInUpBtn"><h4>Sign In</h4></button>
-            </form>
-          </div> <!-- END SIGN IN FORM -->
-
-
-          <!-- sign UP form -->
-          <div class="signInUpForm signUpForm">
-              <form role="form">
-                <div class="form-group">
-                  <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
-                  <input id="newUsername" type="text" class="form-control signUpFormControl"   placeholder="yourname@ohsnap.com" required>
-                </div>
-                <div class="form-group">
-                  <label for="psw1"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                  <input name="psw1" type="password" class="form-control signUpFormControl" id="psw1" placeholder="Enter password" required>
-                </div>
-                <div class="form-group">
-                  <label for="psw2"><span class="glyphicon glyphicon-eye-open"></span> Re-enter password</label>
-                  <input name="psw2" type="password" class="form-control signUpFormControl" id="psw2" placeholder="Re-enter password">
-                </div>
-                    <button id="modalSignUp" class="signInUpBtn"><h4>Sign Up</h4></button>
-                    
-  
-              </form>
-            </div> <!-- END SIGN IN FORM -->
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-
-        </div>
+            <div class="divHolder">
+               
+               <div class="text-secondary intro">
+                  <p class="introText">
+                     You've just walked in the door, after a long day. You're hungry. You have the goods, but have no clue what to make.
+                  </p>
+                  
+                  <p class="introText">
+                     No worries. Oh, Snap! has got you covered. Use 
+                     <br/>
+                     Oh, Snap! to figure out what to make with what you have!
+                  </p>
+               </div>
+               
+               
+               <div class="icon">
+                  <h3>
+                     Sign In or Sign Up!
+                  </h3>
+                  <strong>
+                     ▼
+                  </strong>
+                  <button id="circleBtn" type="button" class="btn btn-default btn-lg">
+                     <img class="iconImg" src="./assets/images/basket.svg"/>
+                  </button>
+               </div>
+               
+            </div>
+            
+         </div>
+         
+         
+         <div class="modal fade" id="signInModal" role="dialog">
+            <div class="modal-dialog">
+               
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal">
+                        ×
+                     </button>
+                  </div>
+                  <div class="modal-body">
+                     <div class="signInUpDivs">
+                        
+                        <div id="signInDiv" class="signInUpDiv activeBtn">
+                           <h4>
+                              Sign in
+                           </h4>
+                        </div>
+                        
+                        <div id="signUpDiv" class="signInUpDiv signUpDiv">
+                           <h4>
+                              Sign up
+                           </h4>
+                        </div>
+                     </div>
+                     
+                     <div class="signInUpForm signInForm">
+                        <form role="form">
+                           <div class="form-group">
+                              <label for="usrname">
+                                 <span class="glyphicon glyphicon-user">
+                                 </span>
+                                  Email
+                              </label>
+                              <input id="username" type="text" class="form-control signInFormControl username" placeholder="yourname@ohsnap.com" required=""/>
+                           </div>
+                           <div class="form-group">
+                              <label for="psw">
+                                 <span class="glyphicon glyphicon-eye-open">
+                                 </span>
+                                  Password
+                              </label>
+                              <input id="psw" type="password" name="psw" class="form-control signInFormControl psw" placeholder="Enter password" required=""/>
+                           </div>
+                           <button id="modalSignIn" class="signInUpBtn">
+                              <h4>
+                                 Sign In
+                              </h4>
+                           </button>
+                        </form>
+                     </div>
+                     
+                     
+                     <div class="signInUpForm signUpForm">
+                        <form role="form">
+                           <div class="form-group">
+                              <label for="usrname">
+                                 <span class="glyphicon glyphicon-user">
+                                 </span>
+                                  Email
+                              </label>
+                              <input id="newUsername" type="text" class="form-control signUpFormControl" placeholder="yourname@ohsnap.com" required=""/>
+                           </div>
+                           <div class="form-group">
+                              <label for="psw1">
+                                 <span class="glyphicon glyphicon-eye-open">
+                                 </span>
+                                  Password
+                              </label>
+                              <input name="psw1" type="password" class="form-control signUpFormControl" id="psw1" placeholder="Enter password" required=""/>
+                           </div>
+                           <div class="form-group">
+                              <label for="psw2">
+                                 <span class="glyphicon glyphicon-eye-open">
+                                 </span>
+                                  Re-enter password
+                              </label>
+                              <input name="psw2" type="password" class="form-control signUpFormControl" id="psw2" placeholder="Re-enter password"/>
+                           </div>
+                           <button id="modalSignUp" class="signInUpBtn">
+                              <h4>
+                                 Sign Up
+                              </h4>
+                           </button>
+                        </form>
+                     </div>
+                     
+                  </div>
+                  <div class="modal-footer">
+                     <button type="submit" class="pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove">
+                        </span>
+                         Cancel
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
       
-    </div>
-  </div>
-</div><!-- END wrap, needed for sticky footsie -->
-
-    <footer>
-        <div class="container">
-          <div class="row">
-              <p><a href="https://github.com/wisejd02">Joshua Wise</a> | <a href="https://github.com/ihatetoast">Katy Cassidy</a> | <a href="https://github.com/LaurynM">Lauryn McFarland</a> | <a href="https://github.com/CynthiaLondon">Cynthia London</a></p
-          </div>
-        </div>
-    </footer>
-
-
-
-
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-    <script
-  src="http://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/ecb99ae562.js"></script>
-
-    <script src="./js/index.js"></script>   
-  </body>
+      <footer>
+         <div class="container">
+            <div class="row">
+               <p>
+                  <a href="https://github.com/wisejd02">
+                     Joshua Wise
+                  </a>
+                   | 
+                  <a href="https://github.com/ihatetoast">
+                     Katy Cassidy
+                  </a>
+                   | 
+                  <a href="https://github.com/LaurynM">
+                     Lauryn McFarland
+                  </a>
+                   | 
+                  <a href="https://github.com/CynthiaLondon">
+                     Cynthia London
+                  </a>
+               </p>
+            </div>
+         </div>
+      </footer>
+      
+      
+      
+      <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
+      </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
+      </script>
+      <script src="https://use.fontawesome.com/ecb99ae562.js">
+      </script>
+      <script src="./js/index.js">
+      </script>
+      <script id="wappalyzer" src="chrome-extension://gppongmhjkpfnbhagpmjfkannfbllamg/js/inject.js">
+      </script>
+   </body>
 </html>
